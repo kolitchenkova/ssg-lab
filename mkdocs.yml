@@ -11,3 +11,5 @@ theme:
 nav:
   - Главная: index.md
   - Отчёт: report.md
+  - Отчёт по заданию Т1: report_T1.md
+  - Отчёт по заданию P1: report_P1.md
