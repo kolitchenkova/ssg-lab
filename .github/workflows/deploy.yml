@@ -53,6 +53,7 @@ jobs:
         uses: appleboy/scp-action@v0.1.7
         with:
           host: "se.ifmo.ru"
+          port: 2222
           username: ${{ secrets.HELIOS_USER }}
           password: ${{ secrets.HELIOS_PASSWORD }}
           source: "site/*"
