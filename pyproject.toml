@@ -1,0 +1,26 @@
+[project]
+name = "ssg-lab"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "kolitchenkova", email = "kolitchenkova.polina@mail.ru" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "mkdocs>=1.6.1",
+    "mkdocs-material>=9.7.7",
+]
+
+[project.scripts]
+ssg-lab = "ssg_lab:main"
+
+[build-system]
+requires = ["uv_build>=0.12.19,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pre-commit>=4.6.2",
+    "virtualenv>=21.14.5",
+]

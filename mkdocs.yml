@@ -1,0 +1,8 @@
+﻿site_name: Исследование SSG
+theme:
+  name: material
+  language: ru
+
+nav:
+  - Главная: index.md
+  - Отчёт: report.md
