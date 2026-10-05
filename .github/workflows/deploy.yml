@@ -55,7 +55,7 @@ jobs:
           host: "se.ifmo.ru"
           port: 2222
           username: ${{ secrets.HELIOS_USER }}
-          password: ${{ secrets.HELIOS_PASSWORD }}
+          key: ${{ secrets.HELIOS_SSH_KEY }}
           source: "site/*"
           target: "~/public_html"
           strip_components: 1
