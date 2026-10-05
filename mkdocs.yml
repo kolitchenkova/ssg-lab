@@ -1,4 +1,9 @@
 ﻿site_name: Исследование SSG
+
+site_url: https://kolitchenkova.github.io/ssg-lab/
+
+use_directory_urls: true
+
 theme:
   name: material
   language: ru
