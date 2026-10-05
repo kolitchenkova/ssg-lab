@@ -1,9 +1,10 @@
-name: Deploy Documentation
+name: Deploy Static HTML
 
 on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 
 permissions:
@@ -17,7 +18,11 @@ concurrency:
 
 jobs:
   build-and-deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -43,3 +48,13 @@ jobs:
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
+
+      - name: Deploy to Helios
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: "se.ifmo.ru"
+          username: ${{ secrets.HELIOS_USER }}
+          password: ${{ secrets.HELIOS_PASSWORD }}
+          source: "site/*"
+          target: "~/public_html"
+          strip_components: 1
